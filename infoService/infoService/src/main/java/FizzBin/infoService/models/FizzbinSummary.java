@@ -1,6 +1,6 @@
 package FizzBin.infoService.models;
 
-public class DatabaseSummary {
+public class FizzbinSummary {
 
     private String id;
     private String title;
