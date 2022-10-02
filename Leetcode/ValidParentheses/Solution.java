@@ -39,14 +39,16 @@ import java.util.Stack;
 class Solution {
     public static void main(String[] args) {
         System.out.println(isValid("([()][][]{}{}()())"));
+        System.out.println(isValid("()"));
+        System.out.println(isValid("()[]{}"));
+        System.out.println(isValid("(]"));
+        System.out.println(isValid("["));
     }
 
     public static boolean isValid(String s) {
-        boolean result = true;
         Map<Character, Character> yrmp = Map.of(
                 ')', '(', '}', '{', ']', '['
         );
-        System.out.println(yrmp);
         Stack<Character> stacko = new Stack();
         for (int i = 0; i < s.length(); i++) {
             switch (s.charAt(i)) {
@@ -58,13 +60,14 @@ class Solution {
                 case ')':
                 case ']':
                 case '}':
-                    if (!stacko.pop().equals(yrmp.get(s.charAt(i))))
-                        result = false;
+                    if (stacko.size() <1 | !stacko.pop().equals(yrmp.get(s.charAt(i))))
+                        return false;
                     break;
                 default:
                     System.out.println("Harry Kim was here");
             }
         }
-        return result;
+        if (stacko.size() > 0) return false;
+        return true;
     }
 }
