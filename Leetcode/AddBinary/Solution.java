@@ -30,8 +30,15 @@ package AddBinary;
 
 */
 
+import java.math.BigInteger;
+
 class Solution {
     public static void main(String[] args) {
+        System.out.println(toBinary("1"));
+        System.out.println(toBinary("11"));
+        System.out.println(toBinary("01"));
+        System.out.println(toBinary("10101"));
+        System.out.println(toBinary("1111"));
         System.out.println(addBinary("1", "11"));
         System.out.println(addBinary("1010", "1011"));
         System.out.println(addBinary("1111", "1111"));
@@ -42,24 +49,24 @@ class Solution {
     }
 
     public static String addBinary(String s, String s2) {
-        return Long.toBinaryString(toBinary(s) + toBinary(s2));
+        return (toBinary(s).add(toBinary(s2))).toString(2);
     }
 
-    public static long toBinary(String c) {
-        long sum = 0;
+    public static BigInteger toBinary(String c) {
+        BigInteger sum = new BigInteger("0");
         if (c.contains("0") || c.contains("1")) {
-            long exponent = 1;
+            BigInteger exponent = new BigInteger("1");
             for (int i = c.length() - 1; i >= 0; i--) {
                 var ch = c.charAt(i);
                 if ('1' == ch) {
-                    sum += exponent;
+                    sum=sum.add(exponent);
                 } else if ('0' == ch) {
                     //meh
                 } else {
                     System.out.println("Harry Kim was here");
-                    return 0;
+                    return null;
                 }
-                exponent *= 2;
+                exponent=exponent.multiply(BigInteger.TWO);
             }
         }
         return sum;
