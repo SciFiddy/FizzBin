@@ -35,16 +35,20 @@ class Solution {
         System.out.println(addBinary("1", "11"));
         System.out.println(addBinary("1010", "1011"));
         System.out.println(addBinary("1111", "1111"));
+        System.out.println(addBinary(
+                "10100000100100110110010000010101111011011001101110111111111101000000101111001110001111100001101"
+                , "110101001011101110001111100110001010100001101011101010000011011011001011101111001100000011011110011"
+        ));
     }
 
     public static String addBinary(String s, String s2) {
-        return Integer.toBinaryString(toBinary(s) + toBinary(s2));
+        return Long.toBinaryString(toBinary(s) + toBinary(s2));
     }
 
-    public static int toBinary(String c) {
-        int sum = 0;
+    public static long toBinary(String c) {
+        long sum = 0;
         if (c.contains("0") || c.contains("1")) {
-            int exponent = 1;
+            long exponent = 1;
             for (int i = c.length() - 1; i >= 0; i--) {
                 var ch = c.charAt(i);
                 if ('1' == ch) {
