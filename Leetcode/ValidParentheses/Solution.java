@@ -43,6 +43,7 @@ class Solution {
         System.out.println(isValid("()[]{}"));
         System.out.println(isValid("(]"));
         System.out.println(isValid("["));
+        System.out.println(isValid("}"));
     }
 
     public static boolean isValid(String s) {
@@ -60,7 +61,7 @@ class Solution {
                 case ')':
                 case ']':
                 case '}':
-                    if (stacko.size() <1 | !stacko.pop().equals(yrmp.get(s.charAt(i))))
+                    if (stacko.size() <1 || !stacko.pop().equals(yrmp.get(s.charAt(i))))
                         return false;
                     break;
                 default:
