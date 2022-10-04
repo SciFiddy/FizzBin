@@ -37,7 +37,7 @@ public class Solution {
 
     public static void main(String[] args) {
         System.out.println(lengthOfLastWord("Hello World")); // should be 5
-        System.out.println(lengthOfLastWord("   fly me   to   the moon  ")); // should be 3
+        System.out.println(lengthOfLastWord("   Harry Kim   was   here  ")); // should be 4
         System.out.println(lengthOfLastWord("a")); // should be 1
     }
 
@@ -48,7 +48,6 @@ public class Solution {
         } else {
             for (int i = s.length() - 1; i >= 0; i--)
                 if (' ' == s.charAt(i)) return s.length() - 1 - i;
-            System.out.println("Harry Kim was here");
             return -1;
         }
     }
