@@ -73,8 +73,10 @@ public class Solution {
     }
 
     public static void main(String[] args) {
-        int n = Integer.MAX_VALUE - 2;
-        System.out.println("isHappy("+n+"): " + isHappy(n));      //should be true
-        System.out.println("isHappy(1221): " + isHappy(1221));      //should be true
+        System.out.println("isHappy(1221): " + isHappy(1221));  //should be true
+        System.out.println("isHappy(19): " + isHappy(19));      //should be true
+        System.out.println("isHappy(2): " + isHappy(2));        //should be false
+        int n = Integer.MAX_VALUE-2;
+        System.out.println("isHappy("+n+"): " + isHappy(n));
     }
 }
