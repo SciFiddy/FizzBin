@@ -45,6 +45,7 @@ public class Solution {
         System.out.println("radar "+displayPalendrome("radar"));
         System.out.println("raar "+displayPalendrome("raad"));
         System.out.println("asdfsradar "+displayPalendrome("tacocat"));
+        System.out.println("1011101 "+displayPalendrome("1011101"));
 
 
 
