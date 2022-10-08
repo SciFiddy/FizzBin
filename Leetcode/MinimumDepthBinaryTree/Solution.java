@@ -1,27 +1,10 @@
 package MinimumDepthBinaryTree;
 
 import java.util.ArrayDeque;
-import java.util.ArrayList;
 import java.util.LinkedList;
 import java.util.Queue;
 
-/**
- * Definition for a binary tree node.
- * public class TreeNode {
- * int val;
- * TreeNode left;
- * TreeNode right;
- * TreeNode() {}
- * TreeNode(int val) { this.val = val; }
- * TreeNode(int val, TreeNode left, TreeNode right) {
- * this.val = val;
- * this.left = left;
- * this.right = right;
- * }
- * }
- */
 class Solution {
-
 
     public static void main(String[] args) {
         var tn = new TreeNode(34);
@@ -55,23 +38,23 @@ class Solution {
 
         treeNodeQueue.add(currentNode);
 
-        while(!treeNodeQueue.isEmpty()){
-            currentNode=treeNodeQueue.poll();
+        while (!treeNodeQueue.isEmpty()) {
+            currentNode = treeNodeQueue.poll();
             TreeNode tn = currentNode.node;
 
             int depth = currentNode.depth;
 
-            if(null == tn.right && null == tn.left){
+            if (null == tn.right && null == tn.left) {
                 return depth;
             }
-            if(null != tn.left){
-                currentNode.node=tn.left;
-                currentNode.depth=depth+1;
+            if (null != tn.left) {
+                currentNode.node = tn.left;
+                currentNode.depth = depth + 1;
                 treeNodeQueue.add(currentNode);
             }
-            if(null != tn.right){
-                currentNode.node=tn.right;
-                currentNode.depth=depth+1;
+            if (null != tn.right) {
+                currentNode.node = tn.right;
+                currentNode.depth = depth + 1;
                 treeNodeQueue.add(currentNode);
             }
         }
@@ -125,13 +108,13 @@ class Solution {
         }
     }
 
-    private static class QueueItem{
+    private static class QueueItem {
         TreeNode node;
         int depth;
 
-        QueueItem(TreeNode node, int depth){
-            this.node=node;
-            this.depth=depth;
+        QueueItem(TreeNode node, int depth) {
+            this.node = node;
+            this.depth = depth;
         }
     }
 
@@ -153,6 +136,4 @@ class Solution {
             this.right = right;
         }
     }
-
-
 }
