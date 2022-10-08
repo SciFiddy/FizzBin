@@ -43,7 +43,7 @@ public class Solution {
 
         //Q7 -
         System.out.println("radar "+displayPalendrome("radar"));
-        System.out.println("raar "+displayPalendrome("raad"));
+        System.out.println("raar "+displayPalendrome("raar"));
         System.out.println("asdfsradar "+displayPalendrome("tacocat"));
         System.out.println("1011101 "+displayPalendrome("1011101"));
 
@@ -58,10 +58,7 @@ public class Solution {
     private static String displayPalendrome(String input) {
         boolean isPalendrome = true;
 
-        //TODO - fix this for even strings.
         for (int i = 0; i < input.length()/2; i++) {
-            System.out.println("looping: " + input.charAt(i) +", "+ input.charAt((input.length() - 1) - i));
-
             if(input.charAt(i) != input.charAt(input.length()-i-1)) {
                 isPalendrome = false;
                 break;
